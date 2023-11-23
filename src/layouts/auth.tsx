@@ -5,11 +5,9 @@ import './assets/auth.scss'
 
 const Auth: React.FC = () => {
     const [form, setForm] = useState(1);
-    const [title, setTitle] = useState('Login');
 
     const switchForm = () => {
-        setForm(form === 1 ? 2 : 1); // Nếu form là 1, chuyển sang 2 và ngược lại
-        setTitle(form === 1 ? 'Register' : 'Login'); // Đổi title tương ứng
+        setForm(form === 1 ? 2 : 1); 
     }
 
     return (
@@ -22,7 +20,7 @@ const Auth: React.FC = () => {
                                 <div className="col-lg-6">
                                     <div className="p-5">
                                         <div className="mb-5">
-                                            <h3 className="h4 font-weight-bold text-theme" onClick={() => switchForm}>{title}</h3>
+                                            <h3 className="h4 font-weight-bold text-theme" onClick={() => switchForm}>NTodo List</h3>
                                         </div>
 
                                         {form === 1 ? <>
