@@ -4,6 +4,7 @@ import Login from './modules/auth/login/login';
 import MainLayout from './layouts/main';
 import { AuthProvider, useAuth } from './providers/AuthProvider';
 import Logout from './modules/auth/logout/logout';
+import Auth from './layouts/auth';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const AppContent: React.FC = () => {
 
   return (
     <div>
-      {isLoggedIn ? <><MainLayout /> <Logout /></> : <Login />}
+      {isLoggedIn ? <><MainLayout /> <Logout /></> : <Auth />}
     </div>
   );
 };
