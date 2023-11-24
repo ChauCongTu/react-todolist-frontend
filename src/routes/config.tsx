@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MainLayout from '../layouts/main';
-import Login from '../modules/auth/login/login';
+import Home from '../modules/home/home';
+import Task from '../modules/tasks/tasks';
+import User from '../modules/users/users'
 
 const RouteConfig = () => {
     return (
         <Routes>
-            <Route path={'/login'} element={<Login />} />
-            <Route path={'/*'} element={<MainLayout />} />
+            <Route path={'/'} element={<Home />} />
+            <Route path={'/tasks'} element={<Task />} />
+            <Route path={'/users'} element={<User/>} />
         </Routes>
     )
     

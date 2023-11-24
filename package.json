@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.2.16",
     "antd": "^5.11.2",
     "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
     "formik": "^2.4.5",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",

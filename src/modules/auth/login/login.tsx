@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, Input } from 'antd';
 import { useAuth } from '../../../providers/AuthProvider';
 import loginValidation from './validations/login';
@@ -8,6 +8,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 const Login: React.FC = () => {
+    useEffect(() => {
+        document.title = 'Login to NTodo List';
+    }, []);
     const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

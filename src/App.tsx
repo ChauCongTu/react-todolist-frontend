@@ -19,7 +19,7 @@ const AppContent: React.FC = () => {
 
   return (
     <div>
-      {isLoggedIn ? <><MainLayout /> <Logout /></> : <Auth />}
+      {isLoggedIn ? <MainLayout /> : <Auth />}
     </div>
   );
 };

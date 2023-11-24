@@ -1,5 +1,5 @@
 import { Button, Form, Input, Select } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import registerValidate from './validations/register';
 import { registerService } from './services/registerService';
@@ -8,6 +8,9 @@ import { DatePicker, Space } from 'antd';
 import type { DatePickerProps, RangePickerProps } from 'antd/es/date-picker';
 
 const Register: React.FC = () => {
+  useEffect(() => {
+    document.title = 'Register new Account';
+  }, []);
   const [formData, setFormData] = useState<RegisterProps>({
     username: '',
     password: '',
