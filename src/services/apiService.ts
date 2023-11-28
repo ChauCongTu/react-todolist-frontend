@@ -13,15 +13,24 @@ const instance: AxiosInstance = axios.create({
 // Axios Interceptor để tự động thêm token vào headers nếu có
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token'); // Thay 'yourTokenKey' bằng key lưu trữ token của bạn
-
+    const storedToken = localStorage.getItem('token');
+    const token = storedToken ? JSON.parse(storedToken) : null; // Chuyển về object, nếu cần
+    console.log(token);
     if (token) {
+      console.log('Adding token to headers:', token);
       config.headers['Authorization'] = `Bearer ${token}`;
     }
 
     return config;
   },
   (error) => {
+    return Promise.reject(error);
+  }
+);
+instance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error('Response error:', error);
     return Promise.reject(error);
   }
 );

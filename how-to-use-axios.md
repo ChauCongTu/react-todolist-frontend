@@ -60,6 +60,7 @@ Dưới đây là một ví dụ đơn giản về cách sử dụng Axios insta
        throw error;
      }
    };
+   
 
    export const createPost = async (newPost: Post): Promise<Post> => {
      try {
@@ -89,6 +90,19 @@ Dưới đây là một ví dụ đơn giản về cách sử dụng Axios insta
        throw error;
      }
    };
+   ```
+
+   ```typescript
+   export const getPosts = async (params?: AxiosRequestConfig['params']): Promise<Post[]> => {
+      try {
+        const response = await instance.get('/posts', { params });
+        return response.data;
+      } catch (error) {
+        console.error('Get Posts Error:', error);
+        throw error;
+      }
+    };
+
    ```
 
 4. **Sử dụng trong Component:**
